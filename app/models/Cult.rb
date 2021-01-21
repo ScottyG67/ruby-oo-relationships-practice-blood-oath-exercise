@@ -62,7 +62,8 @@ class Cult
     end
 
     def self.least_popular
-        self.all.min{|cult|cult.cult_population}
+        #self.all.reduce {|acc,cult| cult.cult_population < acc.cult_population ? cult : acc}
+        self.all.min {|cult|cult.cult_population}
     end
 
     def self.fbi_raid
